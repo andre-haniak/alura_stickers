@@ -17,7 +17,7 @@
 mvn compile
 ```
     
- Isso irá compilar o código Java e gerar os arquivos `.class` na pasta `	target/classes`.
+ Isso irá compilar o código Java e gerar os arquivos `.class` na pasta `target/classes`.
  
  4. Execute o seguinte comando para executar o projeto:
 	
