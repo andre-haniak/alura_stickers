@@ -2,7 +2,7 @@
 
 ## Pré-requisitos
 
--   [Java 11 ou superior instalado](https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows)
+-   [Java 11](https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows) ou superior instalado
 -   Conexão com a internet
 -   [VsCode](https://code.visualstudio.com) 
 
