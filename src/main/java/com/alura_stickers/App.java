@@ -25,12 +25,36 @@ public class App {
 
         List<Map<String, String>> movieList = parser.parse(body);
 
-
         // Listing all movies
         for (Map<String,String> movie : movieList) {
-            System.out.println(movie.get("title"));
-            System.out.println(movie.get("image"));
-            System.out.println(movie.get("imDbRating"));
+            String title = movie.get("title");
+            String poster = movie.get("image");
+            // String rating = movie.get("imDbRating");
+            String rating = "0.5";
+
+            // Print movie info with decorations
+            System.out.println("\u001b[1m" + title + "\u001b[0m");
+            System.out.println(poster);
+            System.out.println("Rating: " + Stars(rating) + " " + rating);
+            System.out.println("\u001b[3m" + "-----------------------------" + "\u001b[0m");
         }
+    }
+
+    static String Stars(String note) {
+        double rating;
+        try {
+            rating = Double.parseDouble(note);
+        } catch (NumberFormatException e) {
+            return "";
+        }
+        int stars = (int) Math.round(rating / 2.0);
+        if (stars < 1) {
+            stars = 1;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < stars; i++) {
+            sb.append("\u2B50"); 
+        }
+        return sb.toString();
     }
 }
