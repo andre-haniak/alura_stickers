@@ -2,9 +2,9 @@
 
 ## Pré-requisitos
 
--   Java 11 ou superior instalado
+-   [Java 11 ou superior instalado](https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows)
 -   Conexão com a internet
--   VsCode 
+-   [VsCode](https://code.visualstudio.com) 
 
 ##  Como usar
 
