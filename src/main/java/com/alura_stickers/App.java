@@ -20,6 +20,10 @@ public class App {
         HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
         String body = response.body();
         System.out.println(body);
+        
+        // Extracting data from the $body{title, image, rating}
+        JsonParser parser = new JsonParser();
 
+        List<Map<String, String>> movieList = parser.parse(body);
     }
 }
