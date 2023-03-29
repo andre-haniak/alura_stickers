@@ -8,7 +8,7 @@ public class NasaContentExtractor {
 
     public List<Content> extractContents(String json){
 
-        // Extracting data from the $body{title, image, rating}
+        // Extracting data from the $body{title, image}
         JsonParser parser = new JsonParser();
         List<Map<String, String>> attributeList = parser.parse(json);
 

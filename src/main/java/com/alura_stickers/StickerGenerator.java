@@ -12,16 +12,10 @@ import javax.imageio.ImageIO;
 public class StickerGenerator {
     
 
-    public void CreateSticker(InputStream inputStream, String fileName, String note) throws Exception {
+    public void CreateSticker(InputStream inputStream, String fileName) throws Exception {
         
         //Reading images
-        double rating = Double.parseDouble(note);
-        InputStream inputCheck;
-        if (rating < 5) {
-            inputCheck = new FileInputStream(new File("input/dislike_drake.png"));
-        } else {
-            inputCheck = new FileInputStream(new File("input/rick_check.png"));
-        }
+        InputStream inputCheck = new FileInputStream(new File("input/rick_check.png"));
 
         BufferedImage checkImage = ImageIO.read(inputCheck);
         BufferedImage originalImage = ImageIO.read(inputStream);

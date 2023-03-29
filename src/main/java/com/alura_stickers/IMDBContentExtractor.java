@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class IMDBContentExtractor {
+public class ImdbContentExtractor {
     
     public List<Content> extractContents(String json) {
 
-        // Extracting data from the $body{title, image, rating}
         JsonParser parser = new JsonParser();
         List<Map<String, String>> attributeList = parser.parse(json);
 
