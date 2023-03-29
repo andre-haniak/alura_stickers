@@ -1,6 +1,8 @@
 package com.alura_stickers;
 
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -26,15 +28,20 @@ public class App {
         List<Map<String, String>> movieList = parser.parse(body);
 
         // Listing all movies
+        StickerGenerator generator = new StickerGenerator();
         for (Map<String,String> movie : movieList) {
+
             String title = movie.get("title");
-            String poster = movie.get("image");
-            // String rating = movie.get("imDbRating");
-            String rating = "0.5";
+            String rating = movie.get("imDbRating");
+            String urlImage = movie.get("image");
+            String fileName = title.replace(":", "-")  + ".png";
+
+            InputStream inputStream = new URL(urlImage).openStream();
+            generator.CreateSticker(inputStream, fileName);
+
 
             // Print movie info with decorations
             System.out.println("\u001b[1m" + title + "\u001b[0m");
-            System.out.println(poster);
             System.out.println("Rating: " + Stars(rating) + " " + rating);
             System.out.println("\u001b[3m" + "-----------------------------" + "\u001b[0m");
         }
