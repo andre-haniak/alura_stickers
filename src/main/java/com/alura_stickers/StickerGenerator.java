@@ -12,15 +12,19 @@ import javax.imageio.ImageIO;
 public class StickerGenerator {
     
 
-    public void CreateSticker(InputStream inputStream, String fileName) throws Exception {
+    public void CreateSticker(InputStream inputStream, String fileName, String note) throws Exception {
         
         //Reading images
-        InputStream inputCheck = new FileInputStream(new File("input/rick_check.png"));
+        double rating = Double.parseDouble(note);
+        InputStream inputCheck;
+        if (rating < 5) {
+            inputCheck = new FileInputStream(new File("input/dislike_drake.png"));
+        } else {
+            inputCheck = new FileInputStream(new File("input/rick_check.png"));
+        }
+
         BufferedImage checkImage = ImageIO.read(inputCheck);
-
-        // InputStream inputStream = new URL("https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg").openStream();
         BufferedImage originalImage = ImageIO.read(inputStream);
-
 
         //Create new image in memory with
         int width = originalImage.getWidth();
@@ -34,7 +38,7 @@ public class StickerGenerator {
         //Draw checkImage on newImage
         int checkWidth = checkImage.getWidth();
         int checkHeight = checkImage.getHeight();
-        graphics.drawImage(checkImage, -50, height - checkHeight, checkWidth, checkHeight, null);
+        graphics.drawImage(checkImage, 0, height - checkHeight, checkWidth, checkHeight, null);
 
         //Write new image to a file
         ImageIO.write(newImage, "png", new File("output/" + fileName));

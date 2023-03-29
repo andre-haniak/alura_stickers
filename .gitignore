@@ -29,7 +29,6 @@ buildNumber.properties
 ## PROJECT
 ##############################
 output/
-input/
 
 ##############################
 ## Visual Studio Code

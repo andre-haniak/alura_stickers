@@ -37,7 +37,7 @@ public class App {
             String fileName = title.replace(":", "-")  + ".png";
 
             InputStream inputStream = new URL(urlImage).openStream();
-            generator.CreateSticker(inputStream, fileName);
+            generator.CreateSticker(inputStream, fileName, rating);
 
 
             // Print movie info with decorations
