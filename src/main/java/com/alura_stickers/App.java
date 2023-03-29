@@ -14,9 +14,7 @@ public class App {
         ClientHttp http = new ClientHttp();
         String json = http.searchData(url);
         
-        // Extracting data from the $body{title, image, rating}
-        JsonParser parser = new JsonParser();
-        List<Map<String, String>> contentList = parser.parse(json);
+
 
         // Listing all contents
         StickerGenerator generator = new StickerGenerator();
