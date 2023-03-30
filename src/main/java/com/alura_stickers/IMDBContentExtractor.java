@@ -17,7 +17,8 @@ public class ImdbContentExtractor  implements ContentExtractor{
         //Popular content list
         for (Map<String, String> attributes: attributeList) {
             String title = attributes.get("title");
-            String urlImage = attributes.get("image").replaceAll("(@+)(.*).jpg$", "$1.jpg");
+            String urlImage = attributes.get("image");
+            // .replaceAll("(@+)(.*).jpg$", "$1.jpg");
 
             Content content = new Content(title, urlImage);
 

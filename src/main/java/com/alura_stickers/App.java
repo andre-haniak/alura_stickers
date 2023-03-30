@@ -8,8 +8,8 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Making request to top contents API
-        // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/Topcontents.json";
-        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2023-02-10&end_date=2023-02-14";
+        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        // String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2023-02-10&end_date=2023-02-14";
 
         ClientHttp http = new ClientHttp();
         String json = http.searchData(url);
@@ -17,11 +17,11 @@ public class App {
 
         //  Extracting and Listing all contents
 
-        // ImdbContentExtractor extractor = new ImdbContentExtractor();
-        // List<Content> contents = extractor.extractContents(json);
-        
-        ContentExtractor extractor = new NasaContentExtractor();
+        ContentExtractor extractor = new ImdbContentExtractor();
         List<Content> contents = extractor.extractContents(json);
+        
+        // ContentExtractor extractor = new NasaContentExtractor();
+        // List<Content> contents = extractor.extractContents(json);
 
         StickerGenerator generator = new StickerGenerator();
 
