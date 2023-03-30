@@ -29,8 +29,8 @@ public class App {
 
             Content content = contents.get(i);
 
-            String title = content.getTitle();
-            String urlImage = content.getUrlImage();
+            String title = content.title();
+            String urlImage = content.urlImage();
 
             // Print content info with decoration
             InputStream inputStream = new URL(urlImage).openStream();
