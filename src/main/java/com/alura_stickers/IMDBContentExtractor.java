@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ImdbContentExtractor {
+public class ImdbContentExtractor  implements ContentExtractor{
     
     public List<Content> extractContents(String json) {
 
@@ -12,6 +12,7 @@ public class ImdbContentExtractor {
         List<Map<String, String>> attributeList = parser.parse(json);
 
         List<Content> contents = new ArrayList<>();
+        System.out.println(contents);
         
         //Popular content list
         for (Map<String, String> attributes: attributeList) {

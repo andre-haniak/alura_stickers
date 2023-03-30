@@ -16,12 +16,16 @@ public class App {
         
 
         //  Extracting and Listing all contents
-        NasaContentExtractor extractor = new NasaContentExtractor();
+
+        // ImdbContentExtractor extractor = new ImdbContentExtractor();
+        // List<Content> contents = extractor.extractContents(json);
+        
+        ContentExtractor extractor = new NasaContentExtractor();
         List<Content> contents = extractor.extractContents(json);
 
         StickerGenerator generator = new StickerGenerator();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < contents.size(); i++) {
 
             Content content = contents.get(i);
 
@@ -36,8 +40,6 @@ public class App {
 
             System.out.println("\u001b[1m" + title + "\u001b[0m");
             System.out.println("\u001b[3m" + "-----------------------------" + "\u001b[0m");
-
-
         }
     }
 
