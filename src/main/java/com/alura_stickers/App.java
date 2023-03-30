@@ -42,22 +42,4 @@ public class App {
             System.out.println("\u001b[3m" + "-----------------------------" + "\u001b[0m");
         }
     }
-
-    // static String Stars(String note) {
-    //     double rating;
-    //     try {
-    //         rating = Double.parseDouble(note);
-    //     } catch (NumberFormatException e) {
-    //         return "";
-    //     }
-    //     int stars = (int) Math.round(rating / 2.0);
-    //     if (stars < 1) {
-    //         stars = 1;
-    //     }
-    //     StringBuilder sb = new StringBuilder();
-    //     for (int i = 0; i < stars; i++) {
-    //         sb.append("\u2B50"); 
-    //     }
-    //     return sb.toString();
-    // }
 }
