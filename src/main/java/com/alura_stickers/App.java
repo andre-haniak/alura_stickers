@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Making request to top contents API
-        API api = API.NASA_APOD;
+        API api = API.TOP_LANGUAGES;
         String url = api.getUrl();
         ClientHttp http = new ClientHttp();
         String json = http.searchData(url);
