@@ -15,7 +15,12 @@ public class StickerGenerator {
     public void CreateSticker(InputStream inputStream, String fileName) throws Exception {
         
         //Reading images
-        InputStream inputCheck = new FileInputStream(new File("input/rick_check.png"));
+        InputStream inputCheck;
+        if (fileName.equals("Javascript.png")){
+            inputCheck = new FileInputStream(new File("input/dislike_drake.png"));
+        } else {
+            inputCheck = new FileInputStream(new File("input/rick_check.png"));
+        }
 
         BufferedImage checkImage = ImageIO.read(inputCheck);
         BufferedImage originalImage = ImageIO.read(inputStream);
